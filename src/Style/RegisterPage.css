@@ -1,0 +1,404 @@
+.Changepassword {
+  width: 100%;
+}
+
+.BGC {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+.C:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  right: -150px;
+  top: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 500px;
+  opacity: 0.9;
+  /* background: linear-gradient(180deg, rgba(2,195,154,1) 0%, rgba(1,97,112,1) 100%); */
+  background-color: rgba(2, 195, 154, 1);
+  /* box-shadow: 0 0 100px 200px rgba(2,195,154,1); */
+}
+
+.C:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  left: -100px;
+  bottom: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  opacity: 0.9;
+  /* background: linear-gradient(180deg, rgba(2,195,154,1) 0%, rgba(1,97,112,1) 100%); */
+  background-color: rgba(2, 195, 154, 1);
+  /* box-shadow: 0 0 120px 200px rgba(2,195,154,1); */
+}
+
+.RegisterPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  background: transparent;
+  /* background-color: #ff0000; */
+  backdrop-filter: blur(110px);
+  z-index: 10;
+}
+
+.RegisterPage .icon {
+  background-color: #fff;
+}
+
+.RegisterPage .cssbuttons-io {
+  height: fit-content;
+  padding: 2px 45px;
+  width: fit-content;
+  color: #222;
+  margin-top: 0%;
+}
+
+.RegisterPage h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.RegisterPage h2 {
+  text-align: center;
+}
+
+.RegisterPage p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+.RegisterPage span {
+  font-size: 12px;
+}
+
+.RegisterPage a {
+  color: #222;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.RegisterPage a:hover {
+  color: #fff;
+}
+
+.inputs {
+  margin-top: 30px;
+}
+
+#fp {
+  margin-top: 0%;
+  margin-bottom: 24px;
+  color: #555;
+  opacity: 0.5;
+  font-size: 0.7rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#fp:hover {
+  color: #02c39a;
+  opacity: 1;
+}
+
+.RegisterPage button {
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+.RegisterPage button:active {
+  transform: scale(0.95);
+}
+
+.RegisterPage button:focus {
+  outline: none;
+}
+
+.RegisterPage button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+  transition: 0.3s;
+}
+
+.RegisterPage button.ghost:hover {
+  background-color: #fff;
+  border-color: #ffffff;
+  color: #222;
+}
+
+.RegisterPage form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.RegisterPage .RegPanel {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  transition: all 0.3s ease;
+
+  backdrop-filter: blur(23px) saturate(179%);
+  -webkit-backdrop-filter: blur(23px) saturate(179%);
+  background-color: rgba(77, 77, 77, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(44, 44, 44, 0.125);
+  box-shadow: 0px 2px 20px #11111170;
+}
+
+.RegisterPage .form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.RegisterPage .sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.RegisterPage .RegPanel.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.RegisterPage .sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.RegisterPage .RegPanel.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.RegisterPage .overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.RegisterPage .RegPanel.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.RegisterPage .overlay {
+  background: #00e0c6;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 195, 154, 1) 0%,
+    rgb(0, 31, 36) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.RegisterPage .RegPanel.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.RegisterPage .overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.RegisterPage .overlay-left {
+  transform: translateX(-20%);
+}
+
+.RegisterPage .RegPanel.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.RegisterPage .overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.RegisterPage .RegPanel.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.RegisterPage .social-container {
+  margin: 20px 0;
+}
+
+.RegisterPage .social-container a {
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+/* button style */
+.textInputWrapper {
+  position: relative;
+  width: 300px;
+  margin: 12px 5px;
+  --accent-color: #02c39a;
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(39, 39, 39, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 100%;
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+  border-bottom: 2px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+  content: "";
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.textInput::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: #fff;
+}
+
+.textInputWrapper .textInput {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 36px;
+  background-color: #1c1c1c !important;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+  width: 100%;
+  border-color: rgba(70, 70, 70, 0.22);
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+input:-webkit-autofill {
+  /* background : transparent !important; */
+  transition: all 0s 50000s !important;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  outline: none;
+}
+
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  background-color: #111 !important;
+}
+
+.textInputWrapper:focus-within .textInput::placeholder {
+  opacity: 0;
+}
